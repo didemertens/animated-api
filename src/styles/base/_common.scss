@@ -1,0 +1,31 @@
+@import 'base/fonts';
+@import 'base/colours';
+
+#btn-green {
+  border: none;
+  background-color: $green-colour;
+  color: $white-colour;
+  font-weight: 800;
+  &:hover {
+    background-color: $blue-green-colour;
+    color: $white-colour;
+  }
+}
+
+.big-title {
+  font-size: 2rem;
+  color: $black-colour;
+  font-family: 'Passion One', sans-serif;
+}
+
+.bigger-title {
+  font-size: 2.5rem;
+  color: $black-colour;
+  font-family: 'Passion One', sans-serif;
+}
+
+@media only screen and (max-width: 950px) {
+  .big-title {
+    font-size: 1.7rem;
+  }
+}

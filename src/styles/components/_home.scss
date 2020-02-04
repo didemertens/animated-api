@@ -1,0 +1,115 @@
+@import 'base/fonts';
+@import 'base/colours';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Rubik', sans-serif;
+  background-color: $white-colour;
+  position: relative;
+  z-index: -10;
+}
+
+#hero-page {
+  background-color: $white-colour;
+  // background-image: url('https://images.unsplash.com/photo-1516796181074-bf453fbfa3e6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80');
+  // background-image: url('https://images.unsplash.com/photo-1527622205424-6166ebe20a8a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80');
+  background-image: url('https://images.unsplash.com/photo-1580745432361-6b7405bfe1c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-title {
+  color: rgb(236, 242, 250);
+  font-family: 'Passion One', cursive;
+  font-size: 7.5rem;
+  text-shadow: 10px 10px 1px $black-colour;
+}
+
+#btn-home-page {
+  max-height: 50px;
+  max-width: 180px;
+  font-size: 20px;
+  font-weight: 700;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+  position: relative;
+  color: $black-colour;
+  z-index: 10;
+  background-color: transparent !important;
+  display: flex;
+  align-items: center;
+  &::before {
+    content: '';
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    border: solid 5px $black-colour;
+    border-radius: 5px;
+    z-index: 1;
+    position: absolute;
+  }
+  &::after {
+    content: '';
+    top: 9px;
+    left: 9px;
+    height: 100%;
+    width: 100%;
+    background-color: $green-btn-home;
+    border-radius: 5px;
+    position: absolute;
+    z-index: -1;
+    opacity: 1;
+    transition: all .3s ease;
+  }
+  &:hover{
+    &::after {
+      transition: all .3s ease;
+      top: 0;
+      left: 0;
+    }
+  }
+}
+
+.home-btns {
+  display: flex;
+  a {
+    &:not(:last-child) {
+      margin-left: -18px;
+      margin-right: 18px;
+    }
+    &:not(:first-child) {
+      margin-left: 15px;
+      margin-right: -15px;
+    }
+  }
+}
+
+  #footer {
+    background-color: rgb(236, 242, 250);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    p {
+      margin-right: 15px;
+      font-size: 16px;
+      span {
+        font-size: 12px;
+      }
+    }
+}

@@ -1,0 +1,60 @@
+@import 'base/colours';
+@import 'base/fonts';
+
+.section-auth {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.div-btn-auth {
+  display: flex;
+  justify-content: center;
+}
+
+#btn-auth-page {
+  max-height: 50px;
+  max-width: 180px;
+  font-size: 20px;
+  font-weight: 700;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+  position: relative;
+  color: $black-colour;
+  z-index: 10;
+  background-color: transparent !important;
+  display: flex;
+  align-items: center;
+  &::before {
+    content: '';
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    border: solid 5px $black-colour;
+    border-radius: 5px;
+    z-index: 1;
+    position: absolute;
+  }
+  &::after {
+    content: '';
+    top: 9px;
+    left: 9px;
+    height: 100%;
+    width: 100%;
+    background-color: $green-btn-home;
+    border-radius: 5px;
+    position: absolute;
+    z-index: -1;
+    opacity: 1;
+    transition: all .3s ease;
+  }
+  &:hover{
+    &::after {
+      transition: all .3s ease;
+      top: 0;
+      left: 0;
+    }
+  }
+}

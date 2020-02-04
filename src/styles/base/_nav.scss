@@ -1,0 +1,23 @@
+@import 'base/colours';
+
+#nav {
+  background-color: $dark-purple-colour;
+  .navbar-item {
+    color: white;
+    border-radius: 5px;
+    &:hover {
+      background-color: $light-purple-colour;
+    }
+    &:focus {
+      background-color: transparent;
+    }
+  }
+}
+
+#navbar-burger {
+  color: $white-colour;
+}
+
+#navbar-menu {
+  background-color: $dark-purple-colour;
+}

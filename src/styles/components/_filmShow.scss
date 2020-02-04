@@ -1,0 +1,184 @@
+@import 'base/colours';
+@import 'base/fonts';
+
+.section-show {
+  margin-top: 20px;
+}
+
+.show-image {
+  margin-top: 15px;
+  img {
+    max-height: 350px;
+    border-radius: 5px;
+  }
+}
+
+// COMMENT DETAILS PART
+
+.big-title-comments{
+  margin-top: 4px;
+  margin-bottom: 2px;
+}
+
+.comments-section {
+  max-height: 460px;
+  overflow: auto;
+  padding: 10px;
+  font-family: 'Rubik', sans-serif;
+}
+
+.comments-container{
+  max-height: 500px;
+}
+
+.comment {
+  max-width: 310px;
+}
+
+#box {
+  max-width: 400px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+  position: relative;
+  background-color: transparent !important;
+  &::before {
+    content: '';
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    border: solid 4px $black-colour;
+    border-radius: 5px;
+    z-index: 1;
+    position: absolute;
+  }
+  &::after {
+    content: '';
+    top: 9px;
+    left: 9px;
+    height: 100%;
+    width: 100%;
+    background-color: $peach-colour;
+    border-radius: 5px;
+    position: absolute;
+    z-index: -1;
+    opacity: .8;
+    transition: all .3s ease;
+  }
+  &:hover{
+    &::after {
+      transition: all .3s ease;
+      top: 0;
+      left: 0;
+    }
+  }
+}
+
+.username-comment {
+  border-bottom: 2px solid rgba(52, 52, 52, .1);
+  max-width: 200px;
+}
+
+.username-change {
+  display: flex;
+}
+
+.delete-comment {
+  margin-left: 10px;
+  p {
+    visibility: hidden;
+    font-size: 13px;
+    margin-left: 5px;
+  }
+  .comment-delete-btn {
+    position: absolute;
+    z-index: 100;
+    color: $black-colour;
+    &:hover {
+      color: $green-colour;
+      + p {
+        visibility: visible;
+        font-style: italic;
+        margin-left: 20px;
+     }
+    }
+  }
+}
+
+.input-new-comment {
+  margin-top: 8px;
+  font-family: 'Rubik', sans-serif;
+}
+
+.field-new-comment {
+  margin-top: 4px;
+  border-top: 4px solid $black-colour;
+  padding: 5px;
+  max-width: 420px;
+}
+
+.login-msg-comments {
+  margin-top: 4px;
+  border-top: 4px solid $black-colour;
+}
+
+// FILM DETAILS PART
+
+.film-details {
+  height: 530px;
+  border-radius: 5px;
+  margin-top: 15px;
+  background-color: $green-colour;
+  color: white;
+  font-family: 'Rubik', sans-serif;
+  display: flex;
+  justify-content: center;
+}
+
+.film-details-text {
+  margin-top: 5px;
+  padding: 15px;
+  max-width: 500px;
+  overflow: auto;
+}
+
+.film-details-title {
+  margin: 25px 0 -9px;
+}
+
+.title-edit-delete {
+  display: flex;
+}
+
+.change-film {
+  display: flex;
+  margin-left: 20px;
+  p {
+    visibility: hidden;
+    font-size: 13px;
+    margin: 0px -15px 5px 0;
+  }
+    .delete-btn {
+      margin-left: 5px;
+      color: $black-colour;
+      &:hover {
+        color: $green-colour;
+        + p {
+          visibility: visible;
+          font-style: italic;
+       }
+    }
+    
+  }
+    .edit-btn{
+      color: $black-colour;
+    &:hover {
+    color: $green-colour;
+      + p {
+        visibility: visible;
+        font-style: italic;
+     }
+    }
+  }
+}
