@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 
-import FilmCard from './FilmCard'
+import ItemCard from '../common/ItemCard'
 
 class FilmIndex extends React.Component {
   state = {
@@ -28,7 +28,7 @@ class FilmIndex extends React.Component {
           </header> */}
           <div className="columns is-mobile is-multiline">
             {films.map(film => (
-              <FilmCard key={film._id} {...film} />
+              <ItemCard key={film._id} item={film} path='films' />
             )
             )}
           </div>

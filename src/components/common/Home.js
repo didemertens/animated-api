@@ -9,7 +9,7 @@ const Home = () => (
           <h1 className="hero-title is-uppercase is-size-1-mobile">Animated</h1>
           <div className="home-btns">
             <a href="/films" className="box is-size-7-mobile" id="btn-home-page"><span>Films</span></a>
-            <a className="box is-size-7-mobile" id="btn-home-page"><span>Series</span></a>
+            <a href="/series" className="box is-size-7-mobile" id="btn-home-page"><span>Series</span></a>
           </div>
         </div>
 

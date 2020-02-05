@@ -20,6 +20,11 @@ import FilmEdit from './components/films/FilmEdit'
 import Register from './components/auth/Register'
 import Login from './components/auth/Login'
 
+import SeriesIndex from './components/series/SeriesIndex'
+import SeriesShow from './components/series/SeriesShow'
+import SeriesEdit from './components/series/SeriesEdit'
+import SeriesNew from './components/series/SeriesNew'
+
 
 class App extends React.Component {
   componentDidMount() {
@@ -38,6 +43,12 @@ class App extends React.Component {
             <SecureRoute path='/films/new' component={FilmNew} />
             <Route path='/films/:id' component={FilmShow} />
             <Route path='/films' component={FilmIndex} />
+
+            <Route exact path='/series/:id/edit' component={SeriesEdit} />
+            <Route exact path='/series/new' component={SeriesNew} />
+            <Route exact path='/series/:id' component={SeriesShow} />
+            <Route exact path='/series' component={SeriesIndex} />
+
             <Route path='/register' component={Register} />
             <Route path='/login' component={Login} />
             <Route path='/profile' component={ProfilePage} />

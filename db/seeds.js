@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 const { dbURI } = require('../config/environment')
 const Film = require('../models/film')
+const Serie = require('../models/serie')
 const User = require('../models/user')
 
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true }, (err, db) => {
@@ -23,7 +24,38 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true }, (er
       ])
     })
     .then((createdUsers) => {
-      console.log(`${createdUsers.length} users created`)
+      Serie.create([
+        {
+          title: 'Rick & Morty',
+          releaseYear: 2013,
+          stillRunning: true,
+          image: 'https://upload.wikimedia.org/wikipedia/en/b/b8/Rick_and_Morty_season_1.png',
+          longDescription: 'After having been missing for nearly 20 years, Rick Sanchez suddenly arrives at daughter Beth\'s doorstep to move in with her and her family. Although Beth welcomes Rick into her home, her husband, Jerry, isn\'t as happy about the family reunion. Jerry is concerned about Rick, a sociopathic scientist, using the garage as his personal laboratory. In the lab, Rick works on a number of sci-fi gadgets, some of which could be considered dangerous. But that\'s not all Rick does that concerns Jerry. He also goes on adventures across the universe that often involve his grandchildren, Morty and Summer.',
+          description: 'An animated series that follows the exploits of a super scientist and his not-so-bright grandson.',
+          user: createdUsers[0]
+        },
+        {
+          title: 'Attack on Titan',
+          releaseYear: 2013,
+          stillRunning: true,
+          image: 'https://images-na.ssl-images-amazon.com/images/I/81PygGH9-%2BL._SL1499_.jpg',
+          longDescription: 'When man-eating Titans first appeared 100 years ago, humans found safety behind massive walls that stopped the giants in their tracks. But the safety they have had for so long is threatened when a colossal Titan smashes through the barriers, causing a flood of the giants into what had been the humans\' safe zone. During the carnage that follows, soldier Eren Jaeger sees one of the creatures devour his mother, which leads him to vow that he will kill every Titan. He enlists some friends who survived to help him, and that group is humanity\'s last hope for avoiding extinction at the hands of the monsters.',
+          description: 'After his hometown is destroyed and his mother is killed, young Eren Yeager vows to cleanse the earth of the giant humanoid Titans that have brought humanity to the brink of extinction.',
+          user: createdUsers[0]
+        },
+        {
+          title: 'Avatar',
+          releaseYear: 2005,
+          stillRunning: false,
+          image: 'https://i.pinimg.com/originals/f2/c2/68/f2c268f781d909536a80ae95d4da69a4.jpg',
+          longDescription: 'In a war-torn world of elemental magic, a young boy reawakens to undertake a dangerous mystic quest to fulfill his destiny as the Avatar, and bring peace to the world.',
+          description: 'In a war-torn world of elemental magic, a young boy reawakens to undertake a dangerous mystic quest to fulfill his destiny as the Avatar, and bring peace to the world.',
+          user: createdUsers[1]
+        }
+      ])
+      return createdUsers
+    })
+    .then((createdUsers) => {
       return Film.create([
         {
           title: 'Kiki\'s Delivery Service',
@@ -99,7 +131,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true }, (er
         }
       ])
     })
-    .then(createdFilms => console.log(`${createdFilms.length} films created `))
+    .then(() => console.log('created'))
     .catch(err => console.log(err))
     .finally(() => mongoose.connection.close())
 })

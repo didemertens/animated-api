@@ -2,26 +2,25 @@ import React from 'react'
 import axios from 'axios'
 import { notify } from 'react-notify-toast'
 
-
 import Auth from '../lib/Auth'
-import Itemshow from '../common/ItemShow'
+import ItemShow from '../common/ItemShow'
 
-class FilmShow extends React.Component {
+class SeriesShow extends React.Component {
   state = {
-    film: {},
-    comment: '',
-    userId: ''
+    serie: {},
+    userId: '',
+    comment: ''
   }
 
   async componentDidMount() {
     try {
-      const res = await axios.get(`/api/films/${this.props.match.params.id}`)
-      const userId = Auth.getUserId('userId')
-      this.setState({ film: res.data, userId })
+      const res = await axios.get(`/api/series/${this.props.match.params.id}`)
+      this.setState({ serie: res.data, userId: Auth.getUserId('userId') })
     } catch (err) {
       console.log(err)
     }
   }
+
 
   handleSubmit = async (e) => {
     e.preventDefault()
@@ -29,7 +28,7 @@ class FilmShow extends React.Component {
       comment: this.state.comment
     }
     try {
-      await axios.post(`/api/films/${this.props.match.params.id}/comments`, data, {
+      await axios.post(`/api/series/${this.props.match.params.id}/comments`, data, {
         headers: { Authorization: `Bearer ${Auth.getToken()}` }
       })
       this.setState({ comment: '' })
@@ -45,8 +44,8 @@ class FilmShow extends React.Component {
 
   getComments = async () => {
     try {
-      const res = await axios.get(`/api/films/${this.props.match.params.id}`)
-      this.setState({ film: res.data })
+      const res = await axios.get(`/api/series/${this.props.match.params.id}`)
+      this.setState({ serie: res.data })
     } catch (err) {
       console.log(err)
     }
@@ -54,7 +53,7 @@ class FilmShow extends React.Component {
 
   handleClickComment = async (el) => {
     try {
-      await axios.delete(`/api/films/${this.props.match.params.id}/comments/${el._id}`, {
+      await axios.delete(`/api/series/${this.props.match.params.id}/comments/${el._id}`, {
         headers: { Authorization: `Bearer ${Auth.getToken()}` }
       })
       notify.show('Comment deleted', 'error')
@@ -64,32 +63,32 @@ class FilmShow extends React.Component {
     }
   }
 
-  handleDeleteFilm = async () => {
+  handleDeleteSerie = async () => {
     try {
-      await axios.delete(`/api/films/${this.props.match.params.id}`, {
+      await axios.delete(`/api/series/${this.props.match.params.id}`, {
         headers: { Authorization: `Bearer ${Auth.getToken()}` }
       })
-      notify.show('Film deleted', 'error')
-      this.props.history.push('/films')
+      notify.show('Series deleted', 'error')
+      this.props.history.push('/series')
     } catch (err) {
       console.log(err)
     }
   }
 
-  handleEditFilm = () => {
-    this.props.history.push(`/films/${this.props.match.params.id}/edit`)
+  handleEditSerie = () => {
+    this.props.history.push(`/series/${this.props.match.params.id}/edit`)
   }
 
   render() {
-    const { film, comment, userId } = this.state
+    const { serie, userId, comment } = this.state
     return (
       <section className="section section-show">
         <div className="container">
-          <Itemshow
-            item={film}
+          <ItemShow
+            item={serie}
             userId={userId}
-            handleEditItem={this.handleEditFilm}
-            handleDeleteItem={this.handleDeleteFilm}
+            handleEditItem={this.handleEditSerie}
+            handleDeleteItem={this.handleDeleteSerie}
             handleClickComment={this.handleClickComment}
             handleChange={this.handleChange}
             handleSubmit={this.handleSubmit}
@@ -101,4 +100,4 @@ class FilmShow extends React.Component {
   }
 }
 
-export default FilmShow
+export default SeriesShow
