@@ -1,7 +1,7 @@
 import React from 'react'
 
-const FilmForm = ({ handleSubmit, data, handleChange }) => (
-  <form onSubmit={handleSubmit}>
+const SeriesForm = ({ handleSubmit, data, handleChange }) => (
+  <form className="seriesForm" onSubmit={handleSubmit}>
     <div className="field">
       <label className="label">Title</label>
       <div className="control">
@@ -16,17 +16,15 @@ const FilmForm = ({ handleSubmit, data, handleChange }) => (
       </div>
     </div>
     <div className="field">
-      <label className="label">Still Running</label>
-      <div className="control">
-        <select name="stillRunning"
+      <label className="checkbox label">Still Running?
+        <input
+          className="checkbox"
+          name="stillRunning"
+          type="checkbox"
           onChange={handleChange}
-          required
-          value={data.stillRunning}
-        >
-          <option value={true}>Yes</option>
-          <option value={false}>No</option>
-        </select>
-      </div>
+          checked={data.stillRunning}
+        />
+      </label>
     </div>
     <div className="field">
       <label className="label">Release Year</label>
@@ -86,4 +84,4 @@ const FilmForm = ({ handleSubmit, data, handleChange }) => (
   </form>
 )
 
-export default FilmForm
+export default SeriesForm

@@ -32,7 +32,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true }, (er
           image: 'https://upload.wikimedia.org/wikipedia/en/b/b8/Rick_and_Morty_season_1.png',
           longDescription: 'After having been missing for nearly 20 years, Rick Sanchez suddenly arrives at daughter Beth\'s doorstep to move in with her and her family. Although Beth welcomes Rick into her home, her husband, Jerry, isn\'t as happy about the family reunion. Jerry is concerned about Rick, a sociopathic scientist, using the garage as his personal laboratory. In the lab, Rick works on a number of sci-fi gadgets, some of which could be considered dangerous. But that\'s not all Rick does that concerns Jerry. He also goes on adventures across the universe that often involve his grandchildren, Morty and Summer.',
           description: 'An animated series that follows the exploits of a super scientist and his not-so-bright grandson.',
-          user: createdUsers[0]
+          user: createdUsers[1]
         },
         {
           title: 'Attack on Titan',
@@ -44,13 +44,40 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true }, (er
           user: createdUsers[0]
         },
         {
-          title: 'Avatar',
+          title: 'Avatar: The Last Airbender',
           releaseYear: 2005,
           stillRunning: false,
           image: 'https://i.pinimg.com/originals/f2/c2/68/f2c268f781d909536a80ae95d4da69a4.jpg',
           longDescription: 'In a war-torn world of elemental magic, a young boy reawakens to undertake a dangerous mystic quest to fulfill his destiny as the Avatar, and bring peace to the world.',
           description: 'In a war-torn world of elemental magic, a young boy reawakens to undertake a dangerous mystic quest to fulfill his destiny as the Avatar, and bring peace to the world.',
           user: createdUsers[1]
+        },
+        {
+          title: 'Disenchantment',
+          releaseYear: 2018,
+          stillRunning: true,
+          image: 'https://images-na.ssl-images-amazon.com/images/I/71nhVXGlyCL._AC_SL1482_.jpg',
+          longDescription: 'After tackling modern times with "The Simpsons" and the future with "Futurama," producer Matt Groening steps into the past with "Disenchantment." The animated fantasy series geared toward adults takes place in the crumbling medieval kingdom of Dreamland. It follows the misadventures of hard-drinking young princess Bean, her feisty elf companion Elfo and personal demon Luci. The oddball trio encounters the likes of ogres, sprites, imps, trolls and human fools along the way. The voice cast features Abbi Jacobson as Bean and includes veteran voiceover artists such as John DiMaggio, Billy West and Maurice LaMarche.',
+          description: 'Princess Tiabeanie, \'Bean\', is annoyed at her imminent arranged marriage to Prince Merkimer. Then she meets Luci, a demon, and Elfo, an elf, and things get rather exciting, and dangerous.',
+          user: createdUsers[0]
+        },
+        {
+          title: 'Vinland Saga',
+          releaseYear: 2019,
+          stillRunning: true,
+          image: 'https://m.media-amazon.com/images/M/MV5BN2UwOTMwMjMtZTE5MS00YmY4LTg4YjAtZDE3ZTg3YTU5MmQ2XkEyXkFqcGdeQXVyODEyMDIxNDY@._V1_.jpg',
+          longDescription: 'The  anime television series Vinland Saga is based in on the  manga series of the same name written and illustrated by  Makoto Yukimura. Around the end of the millennium, Viking, the mightiest but atrocious tribe, had been outbreaking everywhere. Thorfinn, the son of the greatest warrior, lived his childhood in the battlefield. He was seeking the land of reverie called Vinland. This is the story of a true warrior in an age of turmoil.',
+          description: 'Thorfinn pursue a journey with his father killer in order take revenge and end his life in a duel as a honorable warrior and pay his father a homage.',
+          user: createdUsers[0]
+        },
+        {
+          title: 'Over the Garden Wall',
+          releaseYear: 2014,
+          stillRunning: false,
+          image: 'https://m.media-amazon.com/images/M/MV5BYjQwZDhhNzctNTZjYy00NjYzLWE3ZjctNGQwZWY2Zjg5NTgwL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_.jpg',
+          longDescription: 'On an adventure, brothers Wirt and Greg get lost in the Unknown, a strange forest adrift in time. A wise old woodsman and bluebird Beatrice help them find their way. Along the way, Wirt\'s thoughts envelope him, while the wonder of the surroundings preoccupy Greg. The miniseries -- based on creator Patrick McHale\'s cartoon short "Tome of the Unknown" -- features animation that evokes a nostalgic storybook feeling, inspired by folk art and classic illustrations.',
+          description: 'Two brothers find themselves lost in a mysterious land and try to find their way home.',
+          user: createdUsers[0]
         }
       ])
       return createdUsers

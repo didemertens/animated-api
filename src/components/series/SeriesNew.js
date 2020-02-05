@@ -28,22 +28,13 @@ class SeriesNew extends React.Component {
     }
   }
 
-  handleChange = (e) => {
-    let data = {}
-    if (e.target.name === 'stillRunning') {
-      if (e.target.value === 'true') {
-        data = { ...this.state.data, [e.target.name]: true }
-      } else {
-        data = { ...this.state.data, [e.target.name]: false }
-      }
-    } else {
-      data = { ...this.state.data, [e.target.name]: e.target.value }
-    }
+  handleChange = ({ target: { name, value, checked, type } }) => {
+    const newValue = type === 'checkbox' ? checked : value
+    const data = { ...this.state.data, [name]: newValue }
     this.setState({ data })
   }
 
   render() {
-    console.log(this.state.data)
     const { data } = this.state
     return (
       <section className="section">

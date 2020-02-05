@@ -15,7 +15,7 @@ const FilmCard = ({ item, path }) => {
               <h2 className="big-title title-flip">{item.title}</h2>
               {item.director && <h2 className="director-flip">Directed by {item.director}</h2>}
               {!item.director && item.stillRunning && <h2 className="director-flip">Still running</h2>}
-              {!item.director && !item.stillRunning && <h2 className="director-flip">Done</h2>}
+              {!item.director && !item.stillRunning && <h2 className="director-flip">Finished</h2>}
               <h2 className="text-flip content has-text-left">{item.description}</h2>
               <Link to={`/${path}/${item._id}`} id="btn-more"><FaRegArrowAltCircleRight /></Link>
             </div>
