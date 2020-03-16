@@ -1,6 +1,6 @@
 # ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Project 2.5: MERN app
 
-This is a website on which users can register, log in, add and comment on their favourite animated films and series. 
+This is a website built in 1 week on which users can register, log in, add and comment on their favourite animated films and series. 
 
 ## Built with
 * React
@@ -23,8 +23,7 @@ The website consists of a home page, two index and show pages for films and seri
 
 ### 1. Home and Index pages
 
-<img src="src/assets/animated-home.png" alt="Website home page" width="400"/> 
-<img src="src/assets/index-page.png" alt="Website index page" width="400"/>
+<img src="src/assets/animated-home.png" alt="Website home page" width="400"/><img src="src/assets/index-page.png" alt="Website index page" width="400"/>
 
 The home page consists of the name of the website and two buttons to go to either the film index page or the series index page. The main difference between the two index pages, is that the series page shows whether or not that particular series is still running. The film index page shows the director instead.
 
@@ -56,8 +55,8 @@ If users don't see a particular film or series, they can add it to the website. 
 ```
 
 ## Challenges and future improvements
-* The first version of this website just focused on animated films. I added in the series later, so I would like to make as many generic components as possible to use for all pages. The cards on the index page and the show pages are already the same for both films and series, but I would also like to this for the create and edit forms.
+* The first version of this website just focused on animated films. I added in the series later, so I would like to make as many generic components as possible to use for all pages. The cards on the index page and the show pages are already the same for both films and series, but I would also like to do this for the create and edit forms.
 
 * I want to add likes and user profiles so that users can't just leave comments, but also like the films and series. They will be able to see their likes on their own profile, and it will also be possible to click on other users to see their profile and likes. This way, they will have a list of their favourite animated films and series. 
 
-* Because this project was made in 10 days, I didn't have time to add a filter option on the index pages. I would like to add this in the future, so users can filter on for example the release year and the amount of likes and/or comments.
+* Because this project was made in 1 week, I didn't have time to add a filter option on the index pages. I would like to add this in the future, so users can filter on for example the release year and the amount of likes and/or comments.
