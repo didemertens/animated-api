@@ -39,7 +39,7 @@ The website has two different show pages, one for films and one for series. Thes
 
 If users don't see a particular film or series, they can add it to the website. They will need to be logged in and provide the required information, such as the title, description and image. Because they are the creator of the film or series, they alone can update and/or delete it on the show page:
 
-```
+``` javascript
 {userId === item.user && Auth.isAuthenticated() &&
   <div className="change-film">
     <div>
