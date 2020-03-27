@@ -54,9 +54,12 @@ If users don't see a particular film or series, they can add it to the website. 
 }
 ```
 
-## Challenges and future improvements
-* The first version of this website just focused on animated films. I added in the series later, so I would like to make as many generic components as possible to use for all pages. The cards on the index page and the show pages are already the same for both films and series, but I would also like to do this for the create and edit forms.
+## Wins and challenges 
+* Creating this RESTful API was a very valuable experience. Because I made my own back-end and then added the front-end, I learned a lot about how the web works in general. After creating this website, I found it easier to work with third-party APIs as well as I now better understand how the requests of their data works.
 
+* The first version of this website just focused on animated films. Because I added the series later it was difficult to change all the components I needed into generic components. The individual cards on the index page and the show pages are now the same for both films and series, but I didn't have time to also make the create and edit forms into reusable components.
+
+## Future improvements
 * I want to add likes and user profiles so that users can't just leave comments, but also like the films and series. They will be able to see their likes on their own profile, and it will also be possible to click on other users to see their profile and likes. This way, they will have a list of their favourite animated films and series. 
 
 * Because this project was made in 1 week, I didn't have time to add a filter option on the index pages. I would like to add this in the future, so users can filter on for example the release year and the amount of likes and/or comments.
